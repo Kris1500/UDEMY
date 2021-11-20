@@ -1,6 +1,6 @@
 import time
 
-
+Print('testowanie')
 def testF(func, arg):
     start = time.perf_counter()
     func(arg)
