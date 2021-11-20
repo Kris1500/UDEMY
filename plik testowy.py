@@ -1,7 +1,7 @@
 import time
+# funkcja w funkcji z argumentami, sprawdzanie czasu działania programu.
 
-Print('testowanie')
-def testF(func, arg):
+def testF(func, arg,):
     start = time.perf_counter()
     func(arg)
     stop = time.perf_counter()
@@ -20,8 +20,5 @@ def sumujParzyste(a=1,b=10):
             suma=suma+i
     print(suma)
 
-sumujParzyste(1,10)
-
-
-testF(dodawanie,1)
-testF(sumujParzyste,1)
+testF(dodawanie,500000)
+testF(sumujParzyste,5)
