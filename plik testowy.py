@@ -20,7 +20,7 @@ def sumujParzyste(a=1,b=10):
             suma=suma+i
     print(suma)
 
-sumujParzyste(1,9)
+sumujParzyste(1,10)
 
 
 testF(dodawanie,1)
