@@ -1,5 +1,5 @@
 import time
-# funkcja w funkcji z argumentami, sprawdzanie czasu działania programu.
+#  bfunkcja w funkcji z argumentami, sprawdzanie czasu działania programu.
 
 def testF(func, arg,):
     start = time.perf_counter()
