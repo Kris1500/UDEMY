@@ -8,9 +8,10 @@ def testF(func, arg,):
     wynikCzas = stop - start
     print('czas wykonywania : ', wynikCzas)
 
-def dodawanie(a):
-    for i in range(1000):
-        a=a+1
+def dodawanie(c,d=11):
+    a = 0
+    for i in range(c,d):
+        a=a+i
     print(a)
 
 def sumujParzyste(a=1,b=10):
@@ -20,5 +21,5 @@ def sumujParzyste(a=1,b=10):
             suma=suma+i
     print(suma)
 
-testF(dodawanie,500000)
+testF(dodawanie,1)
 testF(sumujParzyste,5)
