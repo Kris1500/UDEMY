@@ -1,6 +1,6 @@
 import random
 import pomocniczy
-bazaBroni=[['łuki', 15, 45], ['siekiera', 35, 65], ['miecz', 65, 75], ['nóż', 85, 55]]
+bazaBroni=[['łuk', 15, 45], ['siekiera', 35, 65], ['miecz', 65, 75], ['nóż', 85, 55]]
 
 # ilość trafień z broni
 # 1 - łuk, 2- siekiera, 3- miecz, 4 - nóz
