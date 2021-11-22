@@ -1,16 +1,16 @@
 import requests
-listaDz = []
-listaNdz = []
+workingList = []
+notWorkingList = []
 with open('www.txt', 'r') as file:
     for line in file:
         openWeb = requests.get(line)
         response = openWeb.status_code
         print(response)
         if response == 200:
-            print('strona działa, zostaje dodana do listy stron działających')
-            listaDz.append(line)
+            print('page is working, send to list"working" ')
+            workingList.append(line)
         elif response == 404:
-            print('strona nie działa, zostaje dodana do listy zablokowanych')
-            listaNdz.append(line)
-print('Działa', listaDz)
-print('Nie działa', listaNdz)
+            print('page is not working, send to list "Not working" ')
+            notWorkingList.append(line)
+print('Working', workingList)
+print('Not working', notWorkingList)
