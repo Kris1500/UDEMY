@@ -1,7 +1,7 @@
 import powpomoc
 print('podaj 5 boków kwadratow')
-listaPól = []
+squareList = []
 for i in range(5):
-    powpomoc.poleKwadrat()
-    listaPól.append(powpomoc.o)
-print(listaPól)
+    powpomoc.squareArea()
+    squareList.append(powpomoc.o)
+print(squareList)
