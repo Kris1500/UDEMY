@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Rocket:
     def __init__(self,speed):
         self.alt = 1

@@ -6,5 +6,6 @@ class User:
     def print_age(self, message):
         print(message, 'wiek to: ', self.age, self.name)
 
+
 user1=User(25, 'zosia')
 user1.print_age('kotrek')
