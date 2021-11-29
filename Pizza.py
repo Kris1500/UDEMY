@@ -2,10 +2,11 @@ pizzaList=['A', 'B', 'C']
 
 elementsA=['ser', 'cebula', 'sos']
 elementsB=['ser', 'chrzan', 'czosnek']
-elementsC=['se', 'pomidor', 'rukola']
+elementsC=['ser', 'pomidor', 'rukola']
 sklA = {}
 sklB = {}
 sklC = {}
+listaW=[0, 1, 2, 3]
 
 for a in elementsA:
     sklA[a] = 0
@@ -16,9 +17,14 @@ for c in elementsC:
 
 for i in pizzaList:
     print(i)
-x = int(input('Wybierz pizze: (1,2 lub 3)'))
+
 
 while True:
+    try:
+        x = int(input('Wybierz pizze: (1,2 lub 3)'))
+    except ValueError:
+        print('podaj liczbę!')
+        continue
     if x == 1:
         for a in elementsA:
             sklA[a] += 1
@@ -32,9 +38,13 @@ while True:
     if x == 0:
         break
 
-    if x != 1 or 2 or 3 or 0:
-        break
+    if x not in listaW:
+        print('pomyliłeś numerek!')
+        continue
 
 print('pizzaA: ', sklA)
 print('pizzaB: ', sklB)
 print('pizzaC: ', sklC)
+
+from collections import Counter
+print(Counter(sklA))
