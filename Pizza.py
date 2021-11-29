@@ -7,6 +7,7 @@ sklA = {}
 sklB = {}
 sklC = {}
 listaW=[0, 1, 2, 3]
+#slownik = {sklA, sklB}
 
 for a in elementsA:
     sklA[a] = 0
@@ -46,5 +47,5 @@ print('pizzaA: ', sklA)
 print('pizzaB: ', sklB)
 print('pizzaC: ', sklC)
 
-from collections import Counter
-print(Counter(sklA))
+print(slownik)
+
