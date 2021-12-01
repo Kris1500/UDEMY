@@ -1,6 +1,7 @@
 import time
 import datetime
 import smtplib
+import functools
 prod1=0
 prod2=0
 listEnd=[]
@@ -41,33 +42,32 @@ file.write(str(czas))
 file.write('\n')
 file.write(listEnd)
 file.write('\n')
+file.write('\n')
+file.close()
 
-#file.close()
+def sendMail(user, password, mailFrom, mailTo, mailSubject, mailBody):
+    message = '''From: {}
+    Subject: {}
+        {}
+    '''.format(mailFrom, mailSubject, mailBody)
 
-#file2 = open(r'C:\Users\Milka\PycharmProjects\UDEMY\car.txt', 'a')
-#tekst=file.read()
-#print(tekst)
-
+    try:
+        server = smtplib.SMTP_SSL('Smtp.gmail.com', 465)
+        #print(server.ehlo())
+        server.login(user, password)
+        server.sendmail(user, mailTo, message)
+        server.close()
+        print('mail sent')
+    except:
+        print('error sending mail')
 
 mailFrom = 'jk.workplace@gmail.com'
 mailTo = 'ciesielski.kris@gmail.com'
-mailSubject = 'Pizzeria'
+mailSubject = 'Pizzeria!'
 mailBody = listEnd
-
-
-message = '''From: {}
-Subject: {}
-
-{}
-'''.format(mailFrom, mailSubject, mailBody)
 user = 'jk.workplace@gmail.com'
 password = 'milusia06'
-try:
-    server = smtplib.SMTP_SSL('Smtp.gmail.com', 465)
-    print(server.ehlo())
-    server.login(user, password)
-    server.sendmail(user, mailTo, message)
-    server.close()
-    print('mail sent')
-except:
-    print('error sending mail')
+
+#sendMail(user,password, mailFrom, mailTo, mailSubject, mailBody)
+sendMailGmail = functools.partial(sendMail, user, password, mailFrom)
+sendMailGmail(mailTo, mailSubject, mailBody)
