@@ -1,8 +1,9 @@
 import time
+import datetime
 import smtplib
 prod1=0
 prod2=0
-
+listEnd=[]
 tekst='hello'
 while True:
  x=int(input('Wybierz pizze: 1- serowa, 2- wege \n'))
@@ -25,23 +26,33 @@ pizza2=('ser', 'oliwki', 'ananas')
 x=prod1*pizza1
 x2=prod2*pizza2
 xAll=x+x2
+listaK=[]
 for elements in xAll:
     xAllList=(elements, xAll.count(elements))
-    print(xAllList)
-print(xAll)
-''.join([str(i) for i in y]) to do edycji
+    listaK+=xAllList
 
-'''
-for i in xAll:
-    xDic[]=i
-    print(xDic)
-'''
+listEnd=str(listaK)
+print(listEnd)
+czas = datetime.datetime.now()
+file = open(r'C:\Users\Milka\PycharmProjects\UDEMY\car.txt', 'a')
+file.write('Witaj, to lista składników wykorzystanych dziś:')
+file.write('\n')
+file.write(str(czas))
+file.write('\n')
+file.write(listEnd)
+file.write('\n')
+
+#file.close()
+
+#file2 = open(r'C:\Users\Milka\PycharmProjects\UDEMY\car.txt', 'a')
+#tekst=file.read()
+#print(tekst)
 
 
 mailFrom = 'jk.workplace@gmail.com'
 mailTo = 'ciesielski.kris@gmail.com'
-mailSubject = 'Pizza'
-mailBody = tekst
+mailSubject = 'Pizzeria'
+mailBody = listEnd
 
 
 message = '''From: {}
