@@ -29,6 +29,8 @@ for elements in xAll:
     xAllList=(elements, xAll.count(elements))
     print(xAllList)
 print(xAll)
+''.join([str(i) for i in y]) to do edycji
+
 '''
 for i in xAll:
     xDic[]=i
