@@ -1,51 +1,60 @@
-pizzaList=['A', 'B', 'C']
+import time
+import smtplib
+prod1=0
+prod2=0
 
-elementsA=['ser', 'cebula', 'sos']
-elementsB=['ser', 'chrzan', 'czosnek']
-elementsC=['ser', 'pomidor', 'rukola']
-sklA = {}
-sklB = {}
-sklC = {}
-listaW=[0, 1, 2, 3]
-#slownik = {sklA, sklB}
-
-for a in elementsA:
-    sklA[a] = 0
-for b in elementsB:
-    sklB[b] = 0
-for c in elementsC:
-    sklC[c] = 0
-
-for i in pizzaList:
-    print(i)
-
-
+tekst='hello'
 while True:
-    try:
-        x = int(input('Wybierz pizze: (1,2 lub 3)'))
-    except ValueError:
-        print('podaj liczbę!')
-        continue
-    if x == 1:
-        for a in elementsA:
-            sklA[a] += 1
+ x=int(input('Wybierz pizze: 1- serowa, 2- wege \n'))
+ if x==1:
+  #dict.update({1:1})
+  prod1+=1
+  print('pizza zapisana!\n ')
+  print('Aktualny stan zamowien: \n pizza serowa: ', prod1, '\n pizza wege: ', prod2, '\n')
+  time.sleep(1)
+ if x ==2:
+  prod2+=1
+  print('pizza zapisana!')
+  print('Aktualny stan zamowien: \n pizza serowa: ', prod1, '\n pizza wege: ', prod2, '\n')
+  time.sleep(1)
+ if x ==3:
+  break
+xDic=[]
+pizza1=('ser', 'mleko', 'kielbasa', 'szynka')
+pizza2=('ser', 'oliwki', 'ananas')
+x=prod1*pizza1
+x2=prod2*pizza2
+xAll=x+x2
+for elements in xAll:
+    xAllList=(elements, xAll.count(elements))
+    print(xAllList)
+print(xAll)
+'''
+for i in xAll:
+    xDic[]=i
+    print(xDic)
+'''
 
-    if x == 2:
-        for b in elementsB:
-            sklB[b]+=1
-    if x == 3:
-        for c in elementsC:
-            sklC[c]+=1
-    if x == 0:
-        break
 
-    if x not in listaW:
-        print('pomyliłeś numerek!')
-        continue
+mailFrom = 'jk.workplace@gmail.com'
+mailTo = 'ciesielski.kris@gmail.com'
+mailSubject = 'Pizza'
+mailBody = tekst
 
-print('pizzaA: ', sklA)
-print('pizzaB: ', sklB)
-print('pizzaC: ', sklC)
 
-print(slownik)
+message = '''From: {}
+Subject: {}
 
+{}
+'''.format(mailFrom, mailSubject, mailBody)
+user = 'jk.workplace@gmail.com'
+password = 'milusia06'
+try:
+    server = smtplib.SMTP_SSL('Smtp.gmail.com', 465)
+    print(server.ehlo())
+    server.login(user, password)
+    server.sendmail(user, mailTo, message)
+    server.close()
+    print('mail sent')
+except:
+    print('error sending mail')
