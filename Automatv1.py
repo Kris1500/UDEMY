@@ -52,7 +52,7 @@ while True:
             print('wplacono: ', a, 'zl')
             p1 -= 1
 
-            if p1 == 13:
+            if p1 == 5:
                 info = '''
                 ___RAPORT___
                 ul. Lawendowa 34 GDANSK
@@ -76,25 +76,7 @@ while True:
                 file=open(r'C:\Users\Milka\PycharmProjects\UDEMY\tabela.txt', 'a')
                 file.write(info)
                 file.close()
-                '''
-                print('\n RAPORT \n')
-                print('Automat przy ilucy Lawendowej 34, Gdansk')
-                print(datetime.datetime.now())
-                print('pozostalo: \n', 'produkt 1', p1, 'sztuk \n', 'produkt 2', p2, 'sztuk \n')
-                print('stan konta to: ', int(s), 'zlotych')
-                print('monety: \n \n  1 - ', m.count(1), 'sztuk, \n  2 - ', m.count(2), 'sztuk, \n  5 - ', m.count(5),
-                      'sztuk \n')
-                list1='Raport z Automatu \n'
-                list2='ul. Lawendowa 34 GDANSK'
-                list3=' produkt 1 :', p1
-                list4=' produkt 2 :', p2
-                list5=' moneta 1 zł :'#, m.count(1)
-                list6=' moneta 2 zł :', m.count(2)
-                list7=' moneta 2 zł :', m.count(5)
-                list8= datetime.datetime.now()
-                listAl=list1+list2+str(list3)+str(list4)#+str(list5)+str(list6)+str(list7)
-                list=list1+list2+str(list3)+str(list4)+str(list8)
-                '''
+
                 mailFrom = 'jk.workplace@gmail.com'
                 mailTo = 'ciesielski.kris@gmail.com'
                 mailSubject = 'Automat'
@@ -123,15 +105,40 @@ while True:
             print('wydaje towar')
             print('wplacono: ', a, 'zl')
             p2 -= 1
-            if p2 == 13:
-                print('\n RAPORT \n')
-                print('-----------------')
-                print('Automat przy ulicy Lawendowej 34, Gdansk')
-                print(datetime.datetime.now())
-                print('pozostalo: \n', 'produkt 1', p1, 'sztuk \n', 'produkt 2', p2, 'sztuk \n')
-                print('stan konta to: ', int(s), 'zlotych')
-                print('monety: \n \n  1 - ', m.count(1), 'sztuk, \n  2 - ', m.count(2), 'sztuk, \n  5 - ', m.count(5),
-                      'sztuk \n')
+            if p2 == 5:
+                info = '''
+                                ___RAPORT___
+                                ul. Lawendowa 34 GDANSK
+                                ___________
+                                STAN NA: {}
+                                __________
+                                Ilosc produktow:
+                                1 - {}
+                                2 - {}
+                                __________
+                                Ilosc monet:
+                                1zl - {}
+                                2zl - {}
+                                5zl - {}
+                                __________
+                                Kwota:
+                                {} zl
+                                __________
+                                '''.format(datetime.datetime.now(), p1, p2, m.count(1), m.count(2), m.count(5), s)
+                print(info)
+                file = open(r'C:\Users\Milka\PycharmProjects\UDEMY\tabela.txt', 'a')
+                file.write(info)
+                file.close()
+
+                mailFrom = 'jk.workplace@gmail.com'
+                mailTo = 'ciesielski.kris@gmail.com'
+                mailSubject = 'Automat'
+                mailBody = str(info)
+                user = 'jk.workplace@gmail.com'
+                password = 'milusia06'
+
+                sendMailGmail = functools.partial(sendMail, user, password, mailFrom)
+                sendMailGmail(mailTo, mailSubject, mailBody)
 
             else:
                 print('pozostalo: ', p2, 'produktu 2, stan konta :', int(s), '\n')
