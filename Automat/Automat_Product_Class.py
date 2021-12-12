@@ -8,6 +8,7 @@ class Product:
     def __str__(self):
         return (f'Product: {self.name} cost: {self.price} in machine left: {self.pieces} pieces')
 
+
 #    def count_pieces(self, Product, piec):
 #        self.name = name
 #        self.pieces -= piec

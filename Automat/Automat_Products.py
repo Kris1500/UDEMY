@@ -35,6 +35,7 @@ def print_one_product(name):
 
 #print(print_one_product('Twix'))
 
+
 #print(count_pieces('Twix', 5))
 def print_all_products():
     for product in Products:
