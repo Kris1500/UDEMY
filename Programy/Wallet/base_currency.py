@@ -1,8 +1,11 @@
 import datetime
+
 '''
 Zapisuje transakcje kupna kryptowalut do pliku txt.'''
 
+
 class Product:
+
     def __init__(self, user, name, curs, dolar_curs, amount, value):
         self.user = user
         self.name = name
@@ -16,17 +19,19 @@ class Product:
                 f'kurs trans:\t \t{self.curs}\tza\t{self.value} \t'
                 f'dolara-kurs:\t{self.dolar_curs}')
 
-def new_t(self, nr_tr):
+
+def new_t(nr_tr):
     user = input('Podaj użytkownika: ')
-    name = input('Podaj nazwę kupowanej waluty ')
-    curs = float(input('Podaj kurs kupna '))
-    dolar_curs = float(input("Podaj kurs dolara "))
-    amount = float(input('Podaj ilosc waluty '))
-    value = float(input('Podaj wartosc '))
+    name = input('Podaj nazwę kupowanej waluty: ')
+    curs = float(input('Podaj kurs kupna: '))
+    dolar_curs = float(input("Podaj kurs dolara: "))
+    amount = float(input('Podaj ilosc waluty: '))
+    value = float(input('Podaj wartosc: '))
     nr_tr = Product(user.upper(), name.upper(), curs.__round__(2), dolar_curs.__round__(2), amount.__round__(6),
                     value.__round__(2))
     buy_list.append(nr_tr)
     return nr_tr
+
 
 def save_txt():
     file = open(r'C:\Users\Milka\PycharmProjects\UDEMY\Programy\Wallet\wallet.txt', 'a')
@@ -38,19 +43,25 @@ def save_txt():
     file.write('\n')
     file.close()
 
+
 buy_list = []
 
 
 def go():
-    nr = 0
     a = None
     while a != 'Q':
-        nr += 1
-        new_t(Product, nr)
-        a = input(
-            "Jeżeli chcesz zakończyć, wybierz 'Q:', aby przejść do następnej pozycji wciśnij dowolny klawisz i enter  ")
+        try:
+            nr_tr = input('Podaj nazwę transakcji: ')
+            new_t(nr_tr)
+            print('zapisano!')
+            a = input(" Jeżeli chcesz zakończyć, wybierz 'Q:' i wciśnij enter,\n "
+                      "aby wprowadzić następną pozycję wciśnij dowolny klawisz i enter  ")
+
+        except:
+            print('UPS...  coś poszło nie tak!  Spróbuj ponownie..')
     save_txt()
 
 go()
 
-print('Dziękuję! Życzę miłego dnia :) Raport został dopisany do pliku txt ')
+print('\n')
+print(f' Dziękuję! Życzę miłego dnia :) Raport został dopisany do pliku txt. \n Utworzono {len(buy_list)} pozycji. ')
