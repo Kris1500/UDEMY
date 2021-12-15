@@ -56,10 +56,10 @@ def go():
             print('zapisano!')
             a = input(" Jeżeli chcesz zakończyć, wybierz 'Q:' i wciśnij enter,\n "
                       "aby wprowadzić następną pozycję wciśnij dowolny klawisz i enter  ")
-
         except:
             print('UPS...  coś poszło nie tak!  Spróbuj ponownie..')
     save_txt()
+
 
 go()
 
