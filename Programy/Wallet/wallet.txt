@@ -1,0 +1,8 @@
+
+
+Z A K U P Y
+2021-12-15 01:17:31.152214	 user ALA	BITCOIN	 	 ilosæ:	0.0	 kurs trans:	 	48555.0	za	485.0 	dolara-kurs:	4.06
+
+Z A K U P Y
+2021-12-15 01:19:25.371096	 user ASS	ASA	 	 ilosæ:	0.00025	 kurs trans:	 	48555.0	za	125.0 	dolara-kurs:	4.06
+
