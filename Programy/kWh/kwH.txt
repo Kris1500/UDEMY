@@ -1,0 +1,12 @@
+Device energy consumption report: Vacum Zelmer--watt power --950.0 W
+You use it annually Vacum Zelmer for 72.80 hours, what gives 3 days.
+Annual energy consumption: 69.16 kWh
+What gives monthly cost: 6.05z³ and annual cost: 72.62z³
+Minute of device working cost: 0.008z³
+____________________________
+Device energy consumption report: oven Samsung--watt power --2500.0 W
+You use it annually oven Samsung for 78.00 hours, what gives 3 days.
+Annual energy consumption: 195.00 kWh
+What gives monthly cost: 17.06z³ and annual cost: 204.75z³
+Minute of device working cost: 0.024z³
+____________________________
