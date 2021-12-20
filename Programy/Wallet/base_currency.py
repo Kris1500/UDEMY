@@ -1,5 +1,7 @@
 import datetime
 
+# base_currency - adds transaction data to the txt file
+
 
 class Product:
 
