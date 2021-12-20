@@ -22,3 +22,4 @@ def square_circle():
     r = int(input('Podaj promień w cm : '))
     o = 3.14 * r * r
     print('Pole koła to: ', o, 'cm kw')
+

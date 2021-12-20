@@ -1,4 +1,5 @@
 import calc_func
+
 x = 0
 try:
     x = int(input('Choose: 1-square, 2-rectangle, 3-triangle, 4-circle   '))
