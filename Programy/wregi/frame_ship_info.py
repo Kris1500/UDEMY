@@ -1,6 +1,5 @@
 info_about_project = 'lodołamacz CX56'
 frame_spacing = 600
-
 x_begining_of_ship = -10000
 x_end_of_ship = 40000
 
