@@ -13,30 +13,35 @@ class Student:
         self.spanish = spanish
 
     def __str__(self):
-        return (f'Uczeń {self.name} z grupy {self.group} o id:{self.id}')
+        return (f'Student:\t{self.name}  from group:\t{self.group}  ID:\t{self.id}')
 
-    def add_d_english(self, a):
-        self.english.append(a)
-        print(f'Dodano ocenę {a}')
+    def add_d_english(self, grade):
+        self.english.append(grade)
+        print(f'Saved {grade}')
 
-    def add_d_spanish(self, a):
-        self.spanish.append(a)
-        print(f'Dodano ocenę {a}')
+    def add_d_spanish(self, grade):
+        self.spanish.append(grade)
+        print(f'Saved {grade}')
 
     def show_english(self):
-        print(f'Oceny z angielskiego: {self.name}')
-        for i in self.english:
-            print(i)
+        print(f'English grades: {self.name}')
+        for grades in self.english:
+            print(grades)
+        print(f'Average: {(sum(self.english)/len(self.english)).__round__(1)}')
 
     def show_spanish(self):
-        print(f'Oceny z hiszpańskiego: {self.name}')
-        for i in self.spanish:
-            print(i)
+        print(f'Spanish grades: {self.name}')
+        for grades in self.spanish:
+            print(grades)
 
+# grades should be from 1 to 6!
+# min 4 grades to pass
+#class # def # main
 
-student_1 = Student('Jan Kowal', '1C', 35)
+student_1 = Student('Jan Nowak', '1C', 35)
 
 student_1.add_d_english(5)
+student_1.add_d_english(4)
 student_1.add_d_english(4)
 print(student_1.english)
 student_1.show_english()
