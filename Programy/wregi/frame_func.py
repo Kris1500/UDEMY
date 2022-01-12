@@ -72,19 +72,15 @@ def count_all():
     print(count_side(y))
     print(count_deck(z))
     print('_________')
-    with open(frame_program_info.path, 'a') as file:
+    with open(frame_program_info.path_2, 'a') as file:
         file.write(f'''
     {datetime.datetime.now()}
     Point nr: {nr}
     ==========================================================
-    X: {x}
-    Y: {y}
-    Z: {z}
+    X: {x}        TRANSFORM    {count_frame(x)}  
+    Y: {y}                     {count_side(y)} 
+    Z: {z}                     {count_deck(z)} 
     ----------------------------------------------------------
-                    TRANSFORM       
-                                {count_frame(x)}
-                                {count_side(y)}
-                                {count_deck(z)}
     ----------------------------------------------------------
     ''')
         file.close()

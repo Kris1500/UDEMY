@@ -57,21 +57,18 @@ def count_all_xyz():
     Z: {count_z(deck, add_high)}
     ''')
     print('_________')
-    with open(frame_program_info.path, 'a') as file:
+    with open(frame_program_info.path_2, 'a') as file:
         file.write(f'''
     {datetime.datetime.now()}
     Point nr: {nr}
     ==========================================================
-    Frame: {frame}
-    Add: {add}
-    Side Value: {side_value}
+    Frame: {frame}      TRANSFORM       X: {count_x(frame, add)}
+    Add: {add}                          Y: {count_y(side_value, side)}    
+    Side Value: {side_value}            Z: {count_z(deck, add_high)}
     Side: {side}
-    Deck: {deck}
+    Deck: {deck}                        
     Add High: {add_high}
     ----------------------------------------------------------
-                    TRANSFORM       X: {count_x(frame, add)}
-                                    Y: {count_y(side_value, side)}
-                                    Z: {count_z(deck, add_high)}
     ----------------------------------------------------------
     ''')
         file.close()
