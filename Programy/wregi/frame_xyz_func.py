@@ -1,11 +1,13 @@
 import frame_ship_info
 import datetime
+import frame_program_info
 
 
 def count_x(frame, add):
     base = frame * frame_ship_info.frame_spacing
     x = base + add
-    print(f'X:{x}')
+    #print(f'X:{x}')
+    return x
 
 
 def count_y(side_value, side):
@@ -15,7 +17,8 @@ def count_y(side_value, side):
         y = side_value
     else:
         y = 0
-    print(f'Y:{y}')
+    #print(f'Y:{y}')
+    return y
 
 
 def count_z(deck, add_high):
@@ -30,7 +33,8 @@ def count_z(deck, add_high):
         z = frame_ship_info.deck_3 + add_high
     if deck == 4:
         z = frame_ship_info.deck_4 + add_high
-    print(f'Z:{z}')
+    #print(f'Z:{z}')
+    return z
 
 
 def count_all_xyz():
@@ -47,12 +51,27 @@ def count_all_xyz():
     print('_________')
     #print(f'{frame_ship_info.info_about_project}\n{nr}')
     print('_________')
-    count_x(frame, add)
-    count_y(side_value, side)
-    count_z(deck, add_high)
+    print(f'''
+    X: {count_x(frame, add)}
+    Y: {count_y(side_value, side)}
+    Z: {count_z(deck, add_high)}
+    ''')
     print('_________')
-
-
-
-
-
+    with open(frame_program_info.path, 'a') as file:
+        file.write(f'''
+    {datetime.datetime.now()}
+    Point nr: {nr}
+    ==========================================================
+    Frame: {frame}
+    Add: {add}
+    Side Value: {side_value}
+    Side: {side}
+    Deck: {deck}
+    Add High: {add_high}
+    ----------------------------------------------------------
+                    TRANSFORM       X: {count_x(frame, add)}
+                                    Y: {count_y(side_value, side)}
+                                    Z: {count_z(deck, add_high)}
+    ----------------------------------------------------------
+    ''')
+        file.close()
