@@ -7,11 +7,9 @@ import datetime
 
 
 def count_frame(x):
-    if frame_ship_info.x_end_of_ship > x > frame_ship_info.x_begining_of_ship:
+    if frame_ship_info.x_end_of_ship > x > frame_ship_info.x_beginning_of_ship:
         frame = x // frame_ship_info.frame_spacing
         rest = x % frame_ship_info.frame_spacing
-        frames = {frame + rest}
-        # print(f'Frame {frame}+{rest}mm')
         return f'Frame: {frame} + {rest}'
     else:
         print(f'Error! Check X ')
@@ -35,24 +33,24 @@ def count_deck(z):
     if frame_ship_info.deck_3 <= z <= frame_ship_info.deck_4:
         return f'Deck 3 + H = {z - frame_ship_info.deck_3}mm'
         # return {z - frame_ship_info.deck_3}
-    if z > frame_ship_info.deck_4:
+    if frame_ship_info.bottom > z > frame_ship_info.deck_4:
         return f'Error! Check Z '
-        # return None
+
 
 # count_side(y): - converts the coordinate y into Left side or Right side and showing the value.
 
 
 def count_side(y):
     if 0 < y < frame_ship_info.y_width_of_ship/2:
-        return (f'{y}mm Right side.')
-    if 0 > y > frame_ship_info.y_width_of_ship/-2:
-        return (f'{abs(y)}mm Left side.')
-    if y == 0:
-        return (f'in CL')
-    if y > frame_ship_info.y_half_of_width:
-        return (f'Error! Check Y ')
-    if y < -frame_ship_info.y_half_of_width:
-        return (f'Error! Check Y ')
+        return f'{y}mm Right side.'
+    elif 0 > y > frame_ship_info.y_width_of_ship/-2:
+        return f'{abs(y)}mm Left side.'
+    elif y == 0:
+        return f'in CL'
+    elif y > frame_ship_info.y_half_of_width:
+        return f'Error! Check Y'
+    elif y < -frame_ship_info.y_half_of_width:
+        return f'Error! Check Y'
 
 # count_all(): - counting X,Y,Z on FRAME, DECK and SIDE
 

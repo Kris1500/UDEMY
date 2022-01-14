@@ -4,9 +4,8 @@ import frame_ship_info
 
 a = 't'
 while a == 't':
-    print('Hello! What type of transformation Do you want?')
     choice = input('''
-    Hello! Choose what You want to do?
+    Choose what You want to do?
     
     XYZ -> Frame, Deck, Side - press 1 
     Frame, Deck, Side -> XYZ - press 2
@@ -33,9 +32,7 @@ while a == 't':
             continue
 
         a = input('If you want to convert new point, press "t" and ENTER.'
-        'To finish, press ENTER.')
+                  'To finish, press ENTER.')
 
     else:
         print('Choose from 1 to 3')
-
-
